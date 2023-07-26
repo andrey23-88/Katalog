@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfCatalog.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfCatalog"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Expander x:Name="expander" Header="Каталог">
+            <ListBox ItemsSource="{Binding Files}" x:Name="listik" Background="#FFD4EBDF">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}" FontWeight="Bold"  />
+                            <!--<TextBlock Text="{Binding Size}" />
+                            <TextBlock Text="{Binding DateModified}" />-->
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Expander>
+
+        <Button x:Name="Btn" Grid.Column="1" Width="100" Height="30" Content="Path" Click="clk"/>
+    </Grid>
+</Window>
